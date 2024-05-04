@@ -55,7 +55,7 @@ class LoginView: UIView {
         return button
     }()
     
-    lazy  var containerview: UIView = {
+    lazy  var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -72,12 +72,12 @@ class LoginView: UIView {
     
     private func addElementsToHierarchy() {
         addSubview(titleLabel)
-        addSubview(containerview)
-        containerview.addSubview(userNameLabel)
-        containerview.addSubview(userNameTextfield)
-        containerview.addSubview(passwordNameLabel)
-        containerview.addSubview(passwordTextfield)
-        containerview.addSubview(loginButton)
+        addSubview(containerView)
+        containerView.addSubview(userNameLabel)
+        containerView.addSubview(userNameTextfield)
+        containerView.addSubview(passwordNameLabel)
+        containerView.addSubview(passwordTextfield)
+        containerView.addSubview(loginButton)
     }
     
     // poniendo los constrains
@@ -88,7 +88,14 @@ class LoginView: UIView {
     }
     
     private func loginContainerConstrains() {
-        let centerY = containerview.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
-        
+        let centerY = containerView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor)
+        centerY.priority = .defaultLow
+        centerY.isActive = true
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.bottomAnchor, constant: 8),
+            containerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            containerView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)
+        ])
     }
 }
