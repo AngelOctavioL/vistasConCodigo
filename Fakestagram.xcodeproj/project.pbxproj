@@ -19,11 +19,11 @@
 		2FFBD3462BC0E15700BE91D7 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD3452BC0E15700BE91D7 /* InformationViewController.swift */; };
 		2FFBD3512BC9EB3200BE91D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD34F2BC9EB3200BE91D7 /* LoginViewController.swift */; };
 		2FFBD3522BC9EB3200BE91D7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFBD3502BC9EB3200BE91D7 /* LoginViewController.xib */; };
-		2FFBD3562BC9F97400BE91D7 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFBD3552BC9F97400BE91D7 /* HomeView.xib */; };
 		2FFBD35C2BCA138D00BE91D7 /* PicturesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFBD35B2BCA138D00BE91D7 /* PicturesView.xib */; };
 		2FFBD35F2BCA190700BE91D7 /* CaptionedPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFBD35E2BCA190700BE91D7 /* CaptionedPictureView.xib */; };
 		2FFBD3612BCA193700BE91D7 /* CaptionedPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD3602BCA193700BE91D7 /* CaptionedPictureView.swift */; };
 		5588DA2F2BE5B867002356FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588DA2E2BE5B867002356FC /* HomeView.swift */; };
+		5588DA312BE5D632002356FC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588DA302BE5D632002356FC /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +41,11 @@
 		2FFBD3452BC0E15700BE91D7 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		2FFBD34F2BC9EB3200BE91D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FFBD3502BC9EB3200BE91D7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		2FFBD3552BC9F97400BE91D7 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		2FFBD35B2BCA138D00BE91D7 /* PicturesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesView.xib; sourceTree = "<group>"; };
 		2FFBD35E2BCA190700BE91D7 /* CaptionedPictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaptionedPictureView.xib; sourceTree = "<group>"; };
 		2FFBD3602BCA193700BE91D7 /* CaptionedPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPictureView.swift; sourceTree = "<group>"; };
 		5588DA2E2BE5B867002356FC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5588DA302BE5D632002356FC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +99,7 @@
 			children = (
 				2FFBD34F2BC9EB3200BE91D7 /* LoginViewController.swift */,
 				2FFBD3502BC9EB3200BE91D7 /* LoginViewController.xib */,
+				5588DA302BE5D632002356FC /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				2FFBD33D2BC0C41B00BE91D7 /* HomeViewController.swift */,
-				2FFBD3552BC9F97400BE91D7 /* HomeView.xib */,
 				5588DA2E2BE5B867002356FC /* HomeView.swift */,
 			);
 			path = Home;
@@ -203,7 +203,6 @@
 				2FCCEC852BA504BA00B1F17F /* LaunchScreen.storyboard in Resources */,
 				2FCCEC822BA504BA00B1F17F /* Assets.xcassets in Resources */,
 				2FCCEC802BA504B900B1F17F /* Main.storyboard in Resources */,
-				2FFBD3562BC9F97400BE91D7 /* HomeView.xib in Resources */,
 				2FFBD35F2BCA190700BE91D7 /* CaptionedPictureView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +222,7 @@
 				2FFBD3612BCA193700BE91D7 /* CaptionedPictureView.swift in Sources */,
 				2FFBD3402BC0C8E800BE91D7 /* PicturesViewController.swift in Sources */,
 				2FCCEC7B2BA504B900B1F17F /* SceneDelegate.swift in Sources */,
+				5588DA312BE5D632002356FC /* LoginView.swift in Sources */,
 				2FFBD33E2BC0C41B00BE91D7 /* HomeViewController.swift in Sources */,
 				2FFBD3462BC0E15700BE91D7 /* InformationViewController.swift in Sources */,
 			);

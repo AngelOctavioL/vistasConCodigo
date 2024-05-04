@@ -13,15 +13,15 @@ class HomeViewController: UIViewController {
         return view as! Homeview
     }
     
-    @IBOutlet weak var pictureTypeSwitch: UISwitch!
-    @IBOutlet weak var showCaptionSwitch: UISwitch!
-    @IBOutlet weak var customTextSwitch: UISwitch!
-    @IBOutlet weak var picturesButton: UIButton!
-    @IBOutlet weak var customText: UITextView! {
-        didSet {
-            customText.delegate = self
-        }
-    }
+    //@IBOutlet weak var pictureTypeSwitch: UISwitch!
+    //@IBOutlet weak var showCaptionSwitch: UISwitch!
+    //@IBOutlet weak var customTextSwitch: UISwitch!
+    //@IBOutlet weak var picturesButton: UIButton!
+//    @IBOutlet weak var customText: UITextView! {
+//        didSet {
+//            customText.delegate = self
+//        }
+//    }
     
     override func loadView() {
         // llamando una instancia de la vista
@@ -30,14 +30,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        connectHomeView()
         setBarButtonItemGroup()
     }
     
-    @IBAction func switchValueChanged(_ sender: UISwitch) {
+    private func connectHomeView() {
+        // toda esta linea es el equivalente a cuando se ligaban los botines con su accion en la interfaz grafica
+        customView.pictureTypeSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        customView.picturesButton.addAction(UIAction(handler: manualSeguePictures(_:)), for: .touchUpInside)
+        customView.customText.delegate = self
+        customView.customTextSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+    }
+    
+    @objc func switchValueChanged(_ sender: UISwitch) {
         if sender.tag == 1 {
-            customText.isEditable = sender.isOn
-        } else if sender == pictureTypeSwitch {
-            picturesButton.setImage(UIImage(systemName: sender.isOn ? "dog.fill" : "cat.fill"), for: .normal)
+            customView.customText.isEditable = sender.isOn
+        } else if sender == customView.pictureTypeSwitch {
+            customView.picturesButton.setImage(UIImage(systemName: sender.isOn ? "dog.fill" : "cat.fill"), for: .normal)
         }
     }
     
@@ -48,7 +57,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func manualSegueInformation() {
-        if customTextSwitch.isOn && (customText.text?.isEmpty ?? true) {
+        if customView.customTextSwitch.isOn && (customView.customText.text?.isEmpty ?? true) {
             let alertController = UIAlertController(title: "Add custom text", message: nil, preferredStyle: .alert)
             let dismissAction = UIAlertAction(title: "Ok", style: .cancel) { _ in
                 print("Alert controller dismissed")
@@ -58,8 +67,8 @@ class HomeViewController: UIViewController {
         } else {
             // utilizando la vista manual que creamos en setTextViewConstrains
             let informationViewController = InformationViewController()
-            if customTextSwitch.isOn {
-                informationViewController.text = customText.text
+            if customView.customTextSwitch.isOn {
+                informationViewController.text = customView.customText.text
             }
             present(informationViewController, animated: true)
         }
@@ -69,10 +78,10 @@ class HomeViewController: UIViewController {
         navigationController?.dismiss(animated: true)
     }
     
-    @IBAction func manualSeguePictures(_ sender: UIButton) {
+    func manualSeguePictures(_ sender: UIAction) {
         let picturesViewController = PicturesViewController(nibName: nil, bundle: nil)
-        picturesViewController.pictureType = pictureTypeSwitch.isOn ? .dog : .cat
-        picturesViewController.showCaption = showCaptionSwitch.isOn
+        picturesViewController.pictureType = customView.pictureTypeSwitch.isOn ? .dog : .cat
+        picturesViewController.showCaption = customView.showCaptionSwitch.isOn
         navigationController?.pushViewController(picturesViewController, animated: true)
     }
 }
