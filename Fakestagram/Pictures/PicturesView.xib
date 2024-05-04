@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PicturesViewController" customModule="Fakestagram" customModuleProvider="target">
+            <connections>
+                <outlet property="firstCaptionedPicture" destination="oYz-3Z-j21" id="qhA-BT-Eyh"/>
+                <outlet property="thirdCaption" destination="mrh-Ag-r0n" id="5p7-Va-ts6"/>
+                <outlet property="thirdImage" destination="lrs-EY-zm1" id="JrS-ZH-ap7"/>
+                <outlet property="view" destination="xVQ-Dx-92D" id="oqG-LA-1gJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xVQ-Dx-92D">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pw3-PM-EzS">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-3Z-j21" customClass="CaptionedPictureView" customModule="Fakestagram" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="379.66666666666669"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mdl-Ew-OFt">
+                            <rect key="frame" x="0.0" y="379.66666666666674" width="393" height="379.33333333333326"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-3" translatesAutoresizingMaskIntoConstraints="NO" id="lrs-EY-zm1">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="359"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="dog-3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrh-Ag-r0n">
+                                    <rect key="frame" x="0.0" y="358.99999999999994" width="393" height="20.333333333333314"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="g6A-Nz-GZR"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="g6A-Nz-GZR" firstAttribute="bottom" secondItem="Pw3-PM-EzS" secondAttribute="bottom" id="F0N-XQ-2Qk"/>
+                <constraint firstItem="Pw3-PM-EzS" firstAttribute="top" secondItem="g6A-Nz-GZR" secondAttribute="top" id="SBm-hu-yTU"/>
+                <constraint firstItem="g6A-Nz-GZR" firstAttribute="trailing" secondItem="Pw3-PM-EzS" secondAttribute="trailing" id="Uen-xj-FqD"/>
+                <constraint firstItem="Pw3-PM-EzS" firstAttribute="leading" secondItem="g6A-Nz-GZR" secondAttribute="leading" id="fPP-jk-hcn"/>
+            </constraints>
+            <point key="canvasLocation" x="688" y="-649"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dog-3" width="1024" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
